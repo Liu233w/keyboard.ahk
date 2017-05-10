@@ -1,0 +1,37 @@
+;    -*- mode: ahk -*-
+
+;; Copyright (c) 2016 Liu233w
+;;
+;; Author: Liu233w <wwwlsmcom@outlook.com>
+;; URL: https://github.com/Liu233w/CapsLocKeys.ahk
+;;
+;;; License: GPLv3
+
+; 全局变量;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+KeyboardOn := 1              ; 是否启用快捷键
+IconNum := A_ScriptDir . "\number.ico" ;状态图标的路径
+IconMark := A_ScriptDir . "\mark.ico"
+;工具栏图标，用于指示KeyboardOn的状态
+Menu, Tray, Icon, %IconMark%, , 1
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+RAlt::Ctrl  ;右Alt作为Ctrl
+
+; capslock的详细设定：单独按下时是ESC
++CapsLock::                     ; 保证先按下修饰键，后按下 CapsLock 时效果相同
+!CapsLock::
+^CapsLock::
++!CapsLock::
++^CapsLock::
+!^CapsLock::
+!^+CapsLock::
+CapsLock::
+CapsLock2 := CapsLock := 1
+KeyWait, CapsLock
+if CapsLock2
+  SendInput, {Esc}
+CapsLock2 := CapsLock := ""
+Return
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Capslock的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If CapsLock

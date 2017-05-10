@@ -1,0 +1,19 @@
+;    -*- mode: ahk -*-
+; capslock+TAB 是大写锁定
+TAB::CapsLock
+
+; capslock+` 来开关快捷键
+`::
+if (KeyboardOn = 1)
+{
+  KeyboardOn := ""
+  Menu, Tray, Icon, %IconMark%, , 1
+}
+else
+{
+  KeyboardOn := 1
+  Menu, Tray, Icon, %IconNum%, , 1
+}
+CapsLock2 := ""
+return
+#If
