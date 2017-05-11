@@ -33,6 +33,24 @@ if CapsLock2
 CapsLock2 := CapsLock := ""
 Return
 
+#If KeyboardOn
+; 空格单独按时是空格，当做组合键时是 shift，按下200毫秒之后也是shift
+; from https://autohotkey.com/board/topic/57344-spacebar-as-space-and-as-shift/?p=360322
+$space::
+if !Spacedown										; if its the first press, no repeat
+  SetCapsLockState , On							; turn on caps lock
+  Spacedown := Spacedown ? Spacedown : A_TickCount	; GET THE TIME WE PRESSED THE BUTTON
+  return
+
+$space up::
+if (A_TickCount-Spacedown<200)					; if we pressed verry short
+  Send,{space}									; send the space
+  SetCapsLockState , Off							; turn capslock back off
+  Spacedown:=""
+  return
+
+#If
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Capslock的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
 #If CapsLock
 o::
