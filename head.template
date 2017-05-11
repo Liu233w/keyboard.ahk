@@ -32,16 +32,19 @@ Return
 ; from https://autohotkey.com/board/topic/57344-spacebar-as-space-and-as-shift/?p=360322
 $space::
 if !Spacedown										; if its the first press, no repeat
-  SetCapsLockState , On							; turn on caps lock
-  Spacedown := Spacedown ? Spacedown : A_TickCount	; GET THE TIME WE PRESSED THE BUTTON
-  return
+  Input, K, L                   ; wait for a key
+  if K != {space}
+    SendInput, {shift down}            ; down shift
+    SendInput, K                       ; send the key
+    Spacedown := Spacedown ? Spacedown : A_TickCount	; GET THE TIME WE PRESSED THE BUTTON
+return
 
 $space up::
-if (A_TickCount-Spacedown<200)					; if we pressed verry short
-  Send,{space}									; send the space
-  SetCapsLockState , Off							; turn capslock back off
-  Spacedown:=""
-  return
+SendInput, {shift up}
+if (A_TickCount - Spacedown < 200)					; if we pressed verry short
+  SendInput, {space}									; send the space
+  Spacedown := ""
+return
 
 #If
 
