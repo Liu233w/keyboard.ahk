@@ -18,13 +18,7 @@ Menu, Tray, Icon, %IconMark%, , 1
 RAlt::Ctrl  ;右Alt作为Ctrl
 
 ; capslock的详细设定：单独按下时是ESC
-+CapsLock::                     ; 保证先按下修饰键，后按下 CapsLock 时效果相同
-!CapsLock::
-^CapsLock::
-+!CapsLock::
-+^CapsLock::
-!^CapsLock::
-!^+CapsLock::
+*CapsLock::                     ; 保证先按下修饰键，后按下 CapsLock 时效果相同
 CapsLock::
 CapsLock2 := CapsLock := 1
 KeyWait, CapsLock
