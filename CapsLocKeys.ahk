@@ -1,11 +1,11 @@
 ;    -*- mode: ahk -*-
 
-;; Copyright (c) 2016 Liu233w
+;; Copyright (c) 2016 - 2017 Liu233w
 ;;
 ;; Author: Liu233w <wwwlsmcom@outlook.com>
 ;; URL: https://github.com/Liu233w/CapsLocKeys.ahk
 ;;
-;;; License: GPLv3
+;;; License: WTFPL (http://www.wtfpl.net/)
 
 ; 全局变量;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 KeyboardOn := 1              ; 是否启用快捷键
@@ -29,6 +29,7 @@ Return
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Capslock的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
 #If CapsLock
+
 o::
 
 SendInput, {End}
