@@ -1,3 +1,5 @@
+__author__ = 'liu233w'
+
 """
 这是使用Python编写的自动化ahk脚本生成文件，用于减少重复的编码
 主要功能：
@@ -70,7 +72,7 @@ Return
 
     return (str1)
 
-with open('CapsLocKeys.ahk', 'w', encoding='utf-8') as fileout:
+with open('keyboard.ahk', 'w', encoding='utf-8') as fileout:
     print(head, file=fileout)
     print(get_keys_script(), file=fileout)
     print(tail, file=fileout)

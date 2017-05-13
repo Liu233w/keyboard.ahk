@@ -3,7 +3,7 @@
 ;; Copyright (c) 2016 - 2017 Liu233w
 ;;
 ;; Author: Liu233w <wwwlsmcom@outlook.com>
-;; URL: https://github.com/Liu233w/CapsLocKeys.ahk
+;; URL: https://github.com/Liu233w/keyboard.ahk
 ;;
 ;;; License: WTFPL (http://www.wtfpl.net/)
 
