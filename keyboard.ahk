@@ -9,6 +9,7 @@
 
 ; 全局变量;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 KeyboardOn := 1              ; 是否启用快捷键
+KeyboardCaps := ""            ; 是否开启大写锁定
 IconNum := A_ScriptDir . "\number.ico" ;状态图标的路径
 IconMark := A_ScriptDir . "\mark.ico"
 ;工具栏图标，用于指示KeyboardOn的状态
@@ -1001,7 +1002,19 @@ Return
 
 ;    -*- mode: ahk -*-
 ; capslock+TAB 是大写锁定
-TAB::CapsLock
+TAB::
+if (KeyboardCaps = 1)
+{
+  SetCapsLockState, off
+  KeyboardCaps := ""
+}
+else
+{
+  SetCapsLockState, on
+  KeyboardCaps := 1
+}
+CapsLock2 := ""
+return
 
 ; capslock+` 来开关快捷键
 `::
