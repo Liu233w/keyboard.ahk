@@ -17,3 +17,6 @@ keyboard.ahk
 - `caps+n` : Backspace
 - `caps+m` : Del
 - 主要快捷键全部移动到右手边，方便按键
+
+## 快捷键
+- `caps+e` : 弹出可移动设备（仅限64位系统）
