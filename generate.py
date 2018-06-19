@@ -105,7 +105,7 @@ Return
 
     return (str1)
 
-with open('keyboard.ahk', 'w', encoding='utf-8') as fileout:
+with open('keyboard.ahk', 'w', encoding='utf-8-sig') as fileout:
     print(head, file=fileout)
     print(get_keys_script(), file=fileout)
     print(tail, file=fileout)

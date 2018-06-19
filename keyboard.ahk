@@ -1,4 +1,4 @@
-;    -*- mode: ahk -*-
+﻿;    -*- mode: ahk -*-
 
 ;; Copyright (c) 2016 - 2018 Liu233w
 ;;
