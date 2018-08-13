@@ -16,27 +16,27 @@ IconMark := A_ScriptDir . "\mark.ico"
 Menu, Tray, Icon, %IconMark%, , 1
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-RAlt::Ctrl  ;右Alt作为Ctrl
+CapsLock::Backspace ; 大写锁定键作为退格键
 
-; capslock的详细设定：单独按下时是ESC
-*CapsLock::                     ; 保证先按下修饰键，后按下 CapsLock 时效果相同
-CapsLock::
-CapsLock2 := CapsLock := 1
-KeyWait, CapsLock
-if CapsLock2
+; RAlt的详细设定：单独按下时是ESC
+*RAlt::                     ; 保证先按下修饰键，后按下 RAlt 时效果相同
+RAlt::
+RAlt2 := RAlt := 1
+KeyWait, RAlt
+if RAlt2
   SendInput, {Esc}
-CapsLock2 := CapsLock := ""
+RAlt2 := RAlt := ""
 Return
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Capslock的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
-#If CapsLock
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;RAlt的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If RAlt
 
 o::
 
 SendInput, {End}
 SendInput, {Enter}
 
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 e::
@@ -71,972 +71,972 @@ else
     goto, start_eject
 }
 
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 u::
 
 SendInput, {Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !u::
 
 SendInput, !{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^u::
 
 SendInput, ^{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +u::
 
 SendInput, +{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!u::
 
 SendInput, +!{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^u::
 
 SendInput, +^{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^u::
 
 SendInput, !^{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+u::
 
 SendInput, !^+{Home}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 p::
 
 SendInput, {End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !p::
 
 SendInput, !{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^p::
 
 SendInput, ^{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +p::
 
 SendInput, +{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!p::
 
 SendInput, +!{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^p::
 
 SendInput, +^{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^p::
 
 SendInput, !^{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+p::
 
 SendInput, !^+{End}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 n::
 
 SendInput, {Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !n::
 
 SendInput, !{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^n::
 
 SendInput, ^{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +n::
 
 SendInput, +{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!n::
 
 SendInput, +!{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^n::
 
 SendInput, +^{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^n::
 
 SendInput, !^{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+n::
 
 SendInput, !^+{Backspace}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 m::
 
 SendInput, {DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !m::
 
 SendInput, !{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^m::
 
 SendInput, ^{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +m::
 
 SendInput, +{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!m::
 
 SendInput, +!{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^m::
 
 SendInput, +^{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^m::
 
 SendInput, !^{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+m::
 
 SendInput, !^+{DEL}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 h::
 
 SendInput, {Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !h::
 
 SendInput, !{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^h::
 
 SendInput, ^{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +h::
 
 SendInput, +{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!h::
 
 SendInput, +!{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^h::
 
 SendInput, +^{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^h::
 
 SendInput, !^{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+h::
 
 SendInput, !^+{Left}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 j::
 
 SendInput, {Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !j::
 
 SendInput, !{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^j::
 
 SendInput, ^{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +j::
 
 SendInput, +{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!j::
 
 SendInput, +!{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^j::
 
 SendInput, +^{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^j::
 
 SendInput, !^{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+j::
 
 SendInput, !^+{Down}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 k::
 
 SendInput, {Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !k::
 
 SendInput, !{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^k::
 
 SendInput, ^{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +k::
 
 SendInput, +{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!k::
 
 SendInput, +!{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^k::
 
 SendInput, +^{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^k::
 
 SendInput, !^{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+k::
 
 SendInput, !^+{Up}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 l::
 
 SendInput, {Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !l::
 
 SendInput, !{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^l::
 
 SendInput, ^{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +l::
 
 SendInput, +{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!l::
 
 SendInput, +!{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^l::
 
 SendInput, +^{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^l::
 
 SendInput, !^{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+l::
 
 SendInput, !^+{Right}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 1::
 
 SendInput, {F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !1::
 
 SendInput, !{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^1::
 
 SendInput, ^{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +1::
 
 SendInput, +{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!1::
 
 SendInput, +!{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^1::
 
 SendInput, +^{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^1::
 
 SendInput, !^{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+1::
 
 SendInput, !^+{F1}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 2::
 
 SendInput, {F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !2::
 
 SendInput, !{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^2::
 
 SendInput, ^{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +2::
 
 SendInput, +{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!2::
 
 SendInput, +!{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^2::
 
 SendInput, +^{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^2::
 
 SendInput, !^{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+2::
 
 SendInput, !^+{F2}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 3::
 
 SendInput, {F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !3::
 
 SendInput, !{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^3::
 
 SendInput, ^{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +3::
 
 SendInput, +{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!3::
 
 SendInput, +!{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^3::
 
 SendInput, +^{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^3::
 
 SendInput, !^{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+3::
 
 SendInput, !^+{F3}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 4::
 
 SendInput, {F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !4::
 
 SendInput, !{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^4::
 
 SendInput, ^{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +4::
 
 SendInput, +{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!4::
 
 SendInput, +!{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^4::
 
 SendInput, +^{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^4::
 
 SendInput, !^{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+4::
 
 SendInput, !^+{F4}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 5::
 
 SendInput, {F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !5::
 
 SendInput, !{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^5::
 
 SendInput, ^{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +5::
 
 SendInput, +{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!5::
 
 SendInput, +!{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^5::
 
 SendInput, +^{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^5::
 
 SendInput, !^{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+5::
 
 SendInput, !^+{F5}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 6::
 
 SendInput, {F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !6::
 
 SendInput, !{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^6::
 
 SendInput, ^{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +6::
 
 SendInput, +{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!6::
 
 SendInput, +!{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^6::
 
 SendInput, +^{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^6::
 
 SendInput, !^{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+6::
 
 SendInput, !^+{F6}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 7::
 
 SendInput, {F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !7::
 
 SendInput, !{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^7::
 
 SendInput, ^{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +7::
 
 SendInput, +{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!7::
 
 SendInput, +!{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^7::
 
 SendInput, +^{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^7::
 
 SendInput, !^{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+7::
 
 SendInput, !^+{F7}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 8::
 
 SendInput, {F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !8::
 
 SendInput, !{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^8::
 
 SendInput, ^{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +8::
 
 SendInput, +{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!8::
 
 SendInput, +!{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^8::
 
 SendInput, +^{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^8::
 
 SendInput, !^{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+8::
 
 SendInput, !^+{F8}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 9::
 
 SendInput, {F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !9::
 
 SendInput, !{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^9::
 
 SendInput, ^{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +9::
 
 SendInput, +{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!9::
 
 SendInput, +!{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^9::
 
 SendInput, +^{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^9::
 
 SendInput, !^{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+9::
 
 SendInput, !^+{F9}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 0::
 
 SendInput, {F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !0::
 
 SendInput, !{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^0::
 
 SendInput, ^{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +0::
 
 SendInput, +{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!0::
 
 SendInput, +!{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^0::
 
 SendInput, +^{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^0::
 
 SendInput, !^{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+0::
 
 SendInput, !^+{F10}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 -::
 
 SendInput, {F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !-::
 
 SendInput, !{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^-::
 
 SendInput, ^{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +-::
 
 SendInput, +{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!-::
 
 SendInput, +!{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^-::
 
 SendInput, +^{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^-::
 
 SendInput, !^{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+-::
 
 SendInput, !^+{F11}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 =::
 
 SendInput, {F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !=::
 
 SendInput, !{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 ^=::
 
 SendInput, ^{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +=::
 
 SendInput, +{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +!=::
 
 SendInput, +!{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 +^=::
 
 SendInput, +^{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^=::
 
 SendInput, !^{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 !^+=::
 
 SendInput, !^+{F12}
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 
 ;    -*- mode: ahk -*-
-; capslock+TAB 是大写锁定
+; RAlt+TAB 是大写锁定
 TAB::
 if (KeyboardCaps = 1)
 {
@@ -1048,10 +1048,10 @@ else
   SetCapsLockState, on
   KeyboardCaps := 1
 }
-CapsLock2 := ""
+RAlt2 := ""
 return
 
-; capslock+` 来开关快捷键
+; RAlt+` 来开关快捷键
 `::
 if (KeyboardOn = 1)
 {
@@ -1063,6 +1063,6 @@ else
   KeyboardOn := 1
   Menu, Tray, Icon, %IconNum%, , 1
 }
-CapsLock2 := ""
+RAlt2 := ""
 return
 #If

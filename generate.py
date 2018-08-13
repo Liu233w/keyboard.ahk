@@ -3,7 +3,7 @@ __author__ = 'liu233w'
 """
 这是使用Python编写的自动化ahk脚本生成文件，用于减少重复的编码
 主要功能：
-对于某些映射，比如Caps+L是右箭头，我们也需要Ctrl+Caps+L作为Ctrl+右箭头
+对于某些映射，比如RAlt+L是右箭头，我们也需要Ctrl+RAlt+L作为Ctrl+右箭头
 类似的映射对于每个按键需要写七遍，本脚本用于减少此类的重复劳动
 """
 
@@ -65,7 +65,7 @@ else
 #      的按键，例如("a","{Home}")将生成：
 #      a::
 #      SendInput,{Home}
-#      CapsLock2:=""
+#      RAlt2:=""
 #      Return
 #      以及其他的七个组合键
 multi_key = [
@@ -73,7 +73,7 @@ multi_key = [
     ('h', '{Left}'), ('j', '{Down}'), ('k', '{Up}'), ('l', '{Right}')
 ]
 
-# 分别使用Capslock+1...9 0 - =表示F1-F12
+# 分别使用RAlt+1...9 0 - =表示F1-F12
 for a in range(1, 10):
     multi_key.append((str(a), '{F%d}' % (a)))
 multi_key += [('0', '{F10}'), ('-', '{F11}'), ('=', '{F12}')]
@@ -88,7 +88,7 @@ def get_keys_script():
         str1 += '%s::\n' % (key)
         str1 += bind
         str1 += """
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 """
@@ -98,7 +98,7 @@ Return
             str1 += '%s%s::\n' % (all_key, key)
             str1 += """
 SendInput, %s%s
-CapsLock2 := ""
+RAlt2 := ""
 Return
 
 """ % (all_key, bind)

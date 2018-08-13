@@ -16,17 +16,17 @@ IconMark := A_ScriptDir . "\mark.ico"
 Menu, Tray, Icon, %IconMark%, , 1
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-RAlt::Ctrl  ;右Alt作为Ctrl
+CapsLock::Backspace ; 大写锁定键作为退格键
 
-; capslock的详细设定：单独按下时是ESC
-*CapsLock::                     ; 保证先按下修饰键，后按下 CapsLock 时效果相同
-CapsLock::
-CapsLock2 := CapsLock := 1
-KeyWait, CapsLock
-if CapsLock2
+; RAlt的详细设定：单独按下时是ESC
+*RAlt::                     ; 保证先按下修饰键，后按下 RAlt 时效果相同
+RAlt::
+RAlt2 := RAlt := 1
+KeyWait, RAlt
+if RAlt2
   SendInput, {Esc}
-CapsLock2 := CapsLock := ""
+RAlt2 := RAlt := ""
 Return
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Capslock的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
-#If CapsLock
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;RAlt的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If RAlt
