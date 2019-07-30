@@ -16,8 +16,6 @@ IconMark := A_ScriptDir . "\mark.ico"
 Menu, Tray, Icon, %IconMark%, , 1
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-CapsLock::Backspace ; 大写锁定键作为退格键
-
 ; RAlt的详细设定：单独按下时是ESC
 *RAlt::                     ; 保证先按下修饰键，后按下 RAlt 时效果相同
 RAlt::
