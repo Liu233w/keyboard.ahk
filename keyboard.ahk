@@ -41,9 +41,17 @@ e::
 
 ;确定可弹出的驱动器列表
 DriveList = Empty
-DriveGet, DriveList, List, REMOVABLE
+DriveGet, DriveList, List
 
-if DriveList
+RemovableDriveList := ""
+Loop, Parse, DriveList
+{
+    pd := PhysicalFromLogical(A_LoopField)
+    if GetType(pd) = "Removable" or GetInterface(pd) = "USB"
+        RemovableDriveList := RemovableDriveList A_LoopField
+}
+
+if RemovableDriveList
     goto, start_eject
 
 MsgBox, 没有需要弹出的驱动器
@@ -51,13 +59,13 @@ return
 
 start_eject:
 
-InputBox, Driveletter, 请输入要弹出的盘符 , %DriveList%
+InputBox, Driveletter, 请输入要弹出的盘符 , %RemovableDriveList%
 if ErrorLevel=1
     return
 
 StringUpper, Driveletter, Driveletter ;将用户输入的盘符转换成大写
 
-IfInString, Driveletter, %DriveList%
+IfInString, Driveletter, %RemovableDriveList%
 {
     Driveletter = %Driveletter%:
     Runwait, RemoveDrive.exe %Driveletter%
@@ -1064,3 +1072,42 @@ else
 RAlt2 := ""
 return
 #If
+
+; code below are from https://autohotkey.com/board/topic/82826-solved-check-if-drive-is-an-external-hard-disk/?p=527171
+; Given a drive letter like "f" return the physical
+; drive associated with it, i.e. \\\\.\\PHYSICALDRIVE2
+PhysicalFromLogical(d)
+{
+    wmi := ComObjGet("winmgmts:")
+
+    for LogicalDisk in wmi.ExecQuery("Select * from Win32_LogicalDiskToPartition")
+        ; turn "f" into "f:"
+        if InStr(LogicalDisk.Dependent,d ":")
+            for Partition in wmi.ExecQuery("Select * from Win32_DiskDriveToDiskPartition")
+                if (Partition.Dependent = LogicalDisk.Antecedent) {
+                    Start := InStr(Partition.Antecedent, """") + 1
+                    return SubStr(Partition.Antecedent, Start, -1)
+                }
+    return 0
+}
+
+; Given a drive path like \\\\.\\PHYSICALDRIVE2 return the
+; drives interface type, i.e. "USB"
+GetInterface(pd)
+{
+    wmi := ComObjGet("winmgmts:")
+
+    for Drive in wmi.ExecQuery("Select * from Win32_DiskDrive where DeviceId = """ pd """")
+        return Drive.InterfaceType
+    return 0
+}
+
+; Given a drive path like \\\\.\\PHYSICALDRIVE2 return the drive type, i.e. "Removable"
+; This is just a wrapper for DriveGet
+GetType(pd)
+{
+    StringReplace pd, pd, \\, \, All
+    DriveGet out, Type, %pd%
+    return out 
+}
+

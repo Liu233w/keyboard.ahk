@@ -30,9 +30,17 @@ SendInput, {Enter}
 ('e', """
 ;确定可弹出的驱动器列表
 DriveList = Empty
-DriveGet, DriveList, List, REMOVABLE
+DriveGet, DriveList, List
 
-if DriveList
+RemovableDriveList := ""
+Loop, Parse, DriveList
+{
+    pd := PhysicalFromLogical(A_LoopField)
+    if GetType(pd) = "Removable" or GetInterface(pd) = "USB"
+        RemovableDriveList := RemovableDriveList A_LoopField
+}
+
+if RemovableDriveList
     goto, start_eject
 
 MsgBox, 没有需要弹出的驱动器
@@ -40,13 +48,13 @@ return
 
 start_eject:
 
-InputBox, Driveletter, 请输入要弹出的盘符 , %DriveList%
+InputBox, Driveletter, 请输入要弹出的盘符 , %RemovableDriveList%
 if ErrorLevel=1
     return
 
 StringUpper, Driveletter, Driveletter ;将用户输入的盘符转换成大写
 
-IfInString, Driveletter, %DriveList%
+IfInString, Driveletter, %RemovableDriveList%
 {
     Driveletter = %Driveletter%:
     Runwait, RemoveDrive.exe %Driveletter%
