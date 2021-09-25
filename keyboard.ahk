@@ -178,97 +178,97 @@ Return
 
 n::
 
-SendInput, {Backspace}
+SendInput, {PgUp}
 RAlt2 := ""
 Return
 
 !n::
 
-SendInput, !{Backspace}
+SendInput, !{PgUp}
 RAlt2 := ""
 Return
 
 ^n::
 
-SendInput, ^{Backspace}
+SendInput, ^{PgUp}
 RAlt2 := ""
 Return
 
 +n::
 
-SendInput, +{Backspace}
+SendInput, +{PgUp}
 RAlt2 := ""
 Return
 
 +!n::
 
-SendInput, +!{Backspace}
+SendInput, +!{PgUp}
 RAlt2 := ""
 Return
 
 +^n::
 
-SendInput, +^{Backspace}
+SendInput, +^{PgUp}
 RAlt2 := ""
 Return
 
 !^n::
 
-SendInput, !^{Backspace}
+SendInput, !^{PgUp}
 RAlt2 := ""
 Return
 
 !^+n::
 
-SendInput, !^+{Backspace}
+SendInput, !^+{PgUp}
 RAlt2 := ""
 Return
 
 m::
 
-SendInput, {DEL}
+SendInput, {PgDn}
 RAlt2 := ""
 Return
 
 !m::
 
-SendInput, !{DEL}
+SendInput, !{PgDn}
 RAlt2 := ""
 Return
 
 ^m::
 
-SendInput, ^{DEL}
+SendInput, ^{PgDn}
 RAlt2 := ""
 Return
 
 +m::
 
-SendInput, +{DEL}
+SendInput, +{PgDn}
 RAlt2 := ""
 Return
 
 +!m::
 
-SendInput, +!{DEL}
+SendInput, +!{PgDn}
 RAlt2 := ""
 Return
 
 +^m::
 
-SendInput, +^{DEL}
+SendInput, +^{PgDn}
 RAlt2 := ""
 Return
 
 !^m::
 
-SendInput, !^{DEL}
+SendInput, !^{PgDn}
 RAlt2 := ""
 Return
 
 !^+m::
 
-SendInput, !^+{DEL}
+SendInput, !^+{PgDn}
 RAlt2 := ""
 Return
 
