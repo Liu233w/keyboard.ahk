@@ -77,7 +77,7 @@ else
 #      Return
 #      以及其他的七个组合键
 multi_key = [
-    ('u', '{Home}'), ('p', '{End}'), ('n', '{PgUp}'), ('m', '{PgDn}'),
+    ('u', '{Home}'), ('p', '{End}'), (',', '{PgUp}'), ('.', '{PgDn}'),
     ('h', '{Left}'), ('j', '{Down}'), ('k', '{Up}'), ('l', '{Right}')
 ]
 

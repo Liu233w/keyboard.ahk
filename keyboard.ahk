@@ -176,97 +176,97 @@ SendInput, !^+{End}
 RAlt2 := ""
 Return
 
-n::
+,::
 
 SendInput, {PgUp}
 RAlt2 := ""
 Return
 
-!n::
+!,::
 
 SendInput, !{PgUp}
 RAlt2 := ""
 Return
 
-^n::
+^,::
 
 SendInput, ^{PgUp}
 RAlt2 := ""
 Return
 
-+n::
++,::
 
 SendInput, +{PgUp}
 RAlt2 := ""
 Return
 
-+!n::
++!,::
 
 SendInput, +!{PgUp}
 RAlt2 := ""
 Return
 
-+^n::
++^,::
 
 SendInput, +^{PgUp}
 RAlt2 := ""
 Return
 
-!^n::
+!^,::
 
 SendInput, !^{PgUp}
 RAlt2 := ""
 Return
 
-!^+n::
+!^+,::
 
 SendInput, !^+{PgUp}
 RAlt2 := ""
 Return
 
-m::
+.::
 
 SendInput, {PgDn}
 RAlt2 := ""
 Return
 
-!m::
+!.::
 
 SendInput, !{PgDn}
 RAlt2 := ""
 Return
 
-^m::
+^.::
 
 SendInput, ^{PgDn}
 RAlt2 := ""
 Return
 
-+m::
++.::
 
 SendInput, +{PgDn}
 RAlt2 := ""
 Return
 
-+!m::
++!.::
 
 SendInput, +!{PgDn}
 RAlt2 := ""
 Return
 
-+^m::
++^.::
 
 SendInput, +^{PgDn}
 RAlt2 := ""
 Return
 
-!^m::
+!^.::
 
 SendInput, !^{PgDn}
 RAlt2 := ""
 Return
 
-!^+m::
+!^+.::
 
 SendInput, !^+{PgDn}
 RAlt2 := ""
