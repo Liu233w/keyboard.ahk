@@ -1073,6 +1073,9 @@ RAlt2 := ""
 return
 #If
 
+;; Double click surface pen to create quick note in OneNote 2016
+#F19::#n
+
 ; code below are from https://autohotkey.com/board/topic/82826-solved-check-if-drive-is-an-external-hard-disk/?p=527171
 ; Given a drive letter like "f" return the physical
 ; drive associated with it, i.e. \\\\.\\PHYSICALDRIVE2
