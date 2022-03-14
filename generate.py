@@ -34,8 +34,8 @@ single_key = [
 #      Return
 #      以及其他的七个组合键
 multi_key = [
-    ('u', '{Home}'), ('p', '{End}'), (',', '{PgUp}'), ('.', '{PgDn}'),
-    ('h', '{Left}'), ('j', '{Down}'), ('k', '{Up}'), ('l', '{Right}')
+    ('a', '{Home}'), ('e', '{End}'),
+    ('b', '{Left}'), ('n', '{Down}'), ('p', '{Up}'), ('f', '{Right}')
 ]
 
 # 分别使用RAlt+1...9 0 - =表示F1-F12
