@@ -1,49 +1,40 @@
 __author__ = 'liu233w'
 
 """
-这是使用Python编写的自动化ahk脚本生成文件，用于减少重复的编码
-主要功能：
-对于某些映射，比如RAlt+L是右箭头，我们也需要Ctrl+RAlt+L作为Ctrl+右箭头
-类似的映射对于每个按键需要写七遍，本脚本用于减少此类的重复劳动
 """
 
 import os
 
-#文件头
 head = ''
 with open('head.template', 'r', encoding='utf-8') as alias:
     head = alias.read()
 
-#文件尾
 tail = ''
 with open('tail.template', 'r', encoding='utf-8') as alias:
     tail = alias.read()
 
-#单独按键，放在此列表内的按键设定只有一个映射，不需要和Ctrl之类进行组合
-#格式：一个元组的列表，第一项是要按下的按键，第二项是一个字符串，表示要运行的
-#      命令
+# ("button", "ahk command")
 single_key = [
 ]
 
-#多重按键，此列表中的按键有多个映射
-#格式：一个元组的列表，第一项是要按下的按键，第二项是一个字符串，表示需要映射
-#      的按键，例如("a","{Home}")将生成：
+# ("button", "map") e.g. ("a","{Home}") generates:
 #      a::
 #      SendInput,{Home}
 #      RAlt2:=""
 #      Return
-#      以及其他的七个组合键
+#      
+# and other 7 combinations (ctrl, alt, etc)
 multi_key = [
     ('a', '{Home}'), ('e', '{End}'),
     ('b', '{Left}'), ('n', '{Down}'), ('p', '{Up}'), ('f', '{Right}')
 ]
 
-# 分别使用RAlt+1...9 0 - =表示F1-F12
+# RAlt+(1...9 0 - =) => F1-F12
 for a in range(1, 10):
     multi_key.append((str(a), '{F%d}' % (a)))
 multi_key += [('0', '{F10}'), ('-', '{F11}'), ('=', '{F12}')]
 
-#表示所有的组合键
+# all modifier key combination
 chord_key = ['', '!', '^', '+', '+!', '+^', '!^', '!^+']
 
 
