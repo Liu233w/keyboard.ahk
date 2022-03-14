@@ -29,436 +29,289 @@ Return
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;RAlt的组合键;;;;;;;;;;;;;;;;;;;;;;;;;;
 #If RAlt
 
-o::
-
-SendInput, {End}
-SendInput, {Enter}
-
-RAlt2 := ""
-Return
-
-e::
-
-;确定可弹出的驱动器列表
-DriveList = Empty
-DriveGet, DriveList, List
-
-RemovableDriveList := ""
-Loop, Parse, DriveList
-{
-    pd := PhysicalFromLogical(A_LoopField)
-    if GetType(pd) = "Removable" or GetInterface(pd) = "USB"
-        RemovableDriveList := RemovableDriveList A_LoopField
-}
-
-if RemovableDriveList
-    goto, start_eject
-
-MsgBox, 没有需要弹出的驱动器
-return
-
-start_eject:
-
-InputBox, Driveletter, 请输入要弹出的盘符 , %RemovableDriveList%
-if ErrorLevel=1
-    return
-
-StringUpper, Driveletter, Driveletter ;将用户输入的盘符转换成大写
-
-IfInString, Driveletter, %RemovableDriveList%
-{
-    Driveletter = %Driveletter%:
-    Runwait, RemoveDrive.exe %Driveletter%
-
-}
-else
-{
-    Msgbox, 请输入一个列表中的盘符
-    goto, start_eject
-}
-
-RAlt2 := ""
-Return
-
-u::
+a::
 
 SendInput, {Home}
 RAlt2 := ""
 Return
 
-!u::
+!a::
 
 SendInput, !{Home}
 RAlt2 := ""
 Return
 
-^u::
+^a::
 
 SendInput, ^{Home}
 RAlt2 := ""
 Return
 
-+u::
++a::
 
 SendInput, +{Home}
 RAlt2 := ""
 Return
 
-+!u::
++!a::
 
 SendInput, +!{Home}
 RAlt2 := ""
 Return
 
-+^u::
++^a::
 
 SendInput, +^{Home}
 RAlt2 := ""
 Return
 
-!^u::
+!^a::
 
 SendInput, !^{Home}
 RAlt2 := ""
 Return
 
-!^+u::
+!^+a::
 
 SendInput, !^+{Home}
 RAlt2 := ""
 Return
 
-p::
+e::
 
 SendInput, {End}
 RAlt2 := ""
 Return
 
-!p::
+!e::
 
 SendInput, !{End}
 RAlt2 := ""
 Return
 
-^p::
+^e::
 
 SendInput, ^{End}
 RAlt2 := ""
 Return
 
-+p::
++e::
 
 SendInput, +{End}
 RAlt2 := ""
 Return
 
-+!p::
++!e::
 
 SendInput, +!{End}
 RAlt2 := ""
 Return
 
-+^p::
++^e::
 
 SendInput, +^{End}
 RAlt2 := ""
 Return
 
-!^p::
+!^e::
 
 SendInput, !^{End}
 RAlt2 := ""
 Return
 
-!^+p::
+!^+e::
 
 SendInput, !^+{End}
 RAlt2 := ""
 Return
 
-,::
-
-SendInput, {PgUp}
-RAlt2 := ""
-Return
-
-!,::
-
-SendInput, !{PgUp}
-RAlt2 := ""
-Return
-
-^,::
-
-SendInput, ^{PgUp}
-RAlt2 := ""
-Return
-
-+,::
-
-SendInput, +{PgUp}
-RAlt2 := ""
-Return
-
-+!,::
-
-SendInput, +!{PgUp}
-RAlt2 := ""
-Return
-
-+^,::
-
-SendInput, +^{PgUp}
-RAlt2 := ""
-Return
-
-!^,::
-
-SendInput, !^{PgUp}
-RAlt2 := ""
-Return
-
-!^+,::
-
-SendInput, !^+{PgUp}
-RAlt2 := ""
-Return
-
-.::
-
-SendInput, {PgDn}
-RAlt2 := ""
-Return
-
-!.::
-
-SendInput, !{PgDn}
-RAlt2 := ""
-Return
-
-^.::
-
-SendInput, ^{PgDn}
-RAlt2 := ""
-Return
-
-+.::
-
-SendInput, +{PgDn}
-RAlt2 := ""
-Return
-
-+!.::
-
-SendInput, +!{PgDn}
-RAlt2 := ""
-Return
-
-+^.::
-
-SendInput, +^{PgDn}
-RAlt2 := ""
-Return
-
-!^.::
-
-SendInput, !^{PgDn}
-RAlt2 := ""
-Return
-
-!^+.::
-
-SendInput, !^+{PgDn}
-RAlt2 := ""
-Return
-
-h::
+b::
 
 SendInput, {Left}
 RAlt2 := ""
 Return
 
-!h::
+!b::
 
 SendInput, !{Left}
 RAlt2 := ""
 Return
 
-^h::
+^b::
 
 SendInput, ^{Left}
 RAlt2 := ""
 Return
 
-+h::
++b::
 
 SendInput, +{Left}
 RAlt2 := ""
 Return
 
-+!h::
++!b::
 
 SendInput, +!{Left}
 RAlt2 := ""
 Return
 
-+^h::
++^b::
 
 SendInput, +^{Left}
 RAlt2 := ""
 Return
 
-!^h::
+!^b::
 
 SendInput, !^{Left}
 RAlt2 := ""
 Return
 
-!^+h::
+!^+b::
 
 SendInput, !^+{Left}
 RAlt2 := ""
 Return
 
-j::
+n::
 
 SendInput, {Down}
 RAlt2 := ""
 Return
 
-!j::
+!n::
 
 SendInput, !{Down}
 RAlt2 := ""
 Return
 
-^j::
+^n::
 
 SendInput, ^{Down}
 RAlt2 := ""
 Return
 
-+j::
++n::
 
 SendInput, +{Down}
 RAlt2 := ""
 Return
 
-+!j::
++!n::
 
 SendInput, +!{Down}
 RAlt2 := ""
 Return
 
-+^j::
++^n::
 
 SendInput, +^{Down}
 RAlt2 := ""
 Return
 
-!^j::
+!^n::
 
 SendInput, !^{Down}
 RAlt2 := ""
 Return
 
-!^+j::
+!^+n::
 
 SendInput, !^+{Down}
 RAlt2 := ""
 Return
 
-k::
+p::
 
 SendInput, {Up}
 RAlt2 := ""
 Return
 
-!k::
+!p::
 
 SendInput, !{Up}
 RAlt2 := ""
 Return
 
-^k::
+^p::
 
 SendInput, ^{Up}
 RAlt2 := ""
 Return
 
-+k::
++p::
 
 SendInput, +{Up}
 RAlt2 := ""
 Return
 
-+!k::
++!p::
 
 SendInput, +!{Up}
 RAlt2 := ""
 Return
 
-+^k::
++^p::
 
 SendInput, +^{Up}
 RAlt2 := ""
 Return
 
-!^k::
+!^p::
 
 SendInput, !^{Up}
 RAlt2 := ""
 Return
 
-!^+k::
+!^+p::
 
 SendInput, !^+{Up}
 RAlt2 := ""
 Return
 
-l::
+f::
 
 SendInput, {Right}
 RAlt2 := ""
 Return
 
-!l::
+!f::
 
 SendInput, !{Right}
 RAlt2 := ""
 Return
 
-^l::
+^f::
 
 SendInput, ^{Right}
 RAlt2 := ""
 Return
 
-+l::
++f::
 
 SendInput, +{Right}
 RAlt2 := ""
 Return
 
-+!l::
++!f::
 
 SendInput, +!{Right}
 RAlt2 := ""
 Return
 
-+^l::
++^f::
 
 SendInput, +^{Right}
 RAlt2 := ""
 Return
 
-!^l::
+!^f::
 
 SendInput, !^{Right}
 RAlt2 := ""
 Return
 
-!^+l::
+!^+f::
 
 SendInput, !^+{Right}
 RAlt2 := ""
